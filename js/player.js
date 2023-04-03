@@ -5,10 +5,14 @@ class Player {
         this.x = 100
         this.y = 300
         this.image
+        this.gun
+        this.bullets = []
+        this.bulletImage
     }
   
     draw() {
         image(this.image, this.x, this.y, this.width, this.height)
+        image(this.gun, this.x+32, this.y+24, 32, 16)
     }
     
       moveUp() {
@@ -32,6 +36,6 @@ class Player {
       }
   
     // shoot() {
-  
+    //     // if opponents array > 0, can shoot
     // }
   }

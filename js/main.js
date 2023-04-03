@@ -29,4 +29,9 @@ function keyPressed() {
     if (keyCode === 39) { // Moves to the right
         game.player.moveRight()
     }
+
+    if (keyCode === 32) {
+        game.player.bullets.push(new Bullet(game.player.bulletImage))
+        console.log(game.player.bullets)
+      }
   }
