@@ -13,7 +13,11 @@ class Game {
     this.player.gun = loadImage("../assets/images/player/gun.png")
     this.player.bulletImage = loadImage("../assets/images/player/bullet.png")
 
-    this.opponents.image = loadImage("../assets/images/opponents/Gay1Down.png")
+    this.opponents.image1 = loadImage("../assets/images/opponents/Gay1Down.png")
+    this.opponents.image2 = loadImage("../assets/images/opponents/Gay2Down.png")
+    this.opponents.image3 = loadImage("../assets/images/opponents/Gay3Down.png")
+    this.opponents.image4 = loadImage("../assets/images/opponents/Gay4Down.png")
+    this.opponents.image5 = loadImage("../assets/images/opponents/Gay5Down.png")
   }
 
   draw() {
@@ -36,8 +40,16 @@ class Game {
 
     // Opponents
 
-    if (this.opponents.length === 0) {
-      this.opponents.push(new Opponents(this.opponents.image))
+    if (document.querySelector(`span`).innerText === "1" && this.opponents.length === 0) {
+      this.opponents.push(new Opponents(this.opponents.image1))
+    } else if (document.querySelector(`span`).innerText === "2" && this.opponents.length === 0) {
+      this.opponents.push(new Opponents(this.opponents.image1), new Opponents(this.opponents.image2))
+    } else if (document.querySelector(`span`).innerText === "3" && this.opponents.length === 0) {
+      this.opponents.push(new Opponents(this.opponents.image1), new Opponents(this.opponents.image2), new Opponents(this.opponents.image3))
+    } else if (document.querySelector(`span`).innerText === "4" && this.opponents.length === 0) {
+      this.opponents.push(new Opponents(this.opponents.image1), new Opponents(this.opponents.image2), new Opponents(this.opponents.image3), new Opponents(this.opponents.image4))
+    } else if (document.querySelector(`span`).innerText === "5" && this.opponents.length === 0) {
+      this.opponents.push(new Opponents(this.opponents.image1), new Opponents(this.opponents.image2), new Opponents(this.opponents.image3), new Opponents(this.opponents.image4), new Opponents(this.opponents.image5))
     }
 
     this.opponents.forEach(opponent => {
