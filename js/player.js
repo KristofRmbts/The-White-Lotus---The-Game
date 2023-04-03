@@ -27,15 +27,11 @@ class Player {
 
       moveRight() {
         this.x += 40
-        this.image = this.imageright
+        this.image = this.imageright 
       }
     
       moveLeft() {
         this.x -= 40
-        this.image = this.imageleft
+        this.image = this.imageright
       }
-  
-    // shoot() {
-    //     // if opponents array > 0, can shoot
-    // }
-  }
+    }

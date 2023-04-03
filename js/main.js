@@ -10,10 +10,17 @@ function setup() {
 
 function draw() {
     game.draw()
+    fill("white")
+    rect(840, 520, 150, 70)
+    textSize(12)
+    fill("black")
+    text("CONTROLS:", 846, 538)
+    textSize(10)
+    text("↑, ↓, →, ←            MOVE", 846, 558)
+    text("space                    SHOOT", 846, 578)
 }
 
 function keyPressed() {
-  
     if (keyCode === 38) { // Moves up
       game.player.moveUp()
     }
@@ -30,8 +37,7 @@ function keyPressed() {
         game.player.moveRight()
     }
 
-    if (keyCode === 32) {
+    if (keyCode === 32 && game.player.bullets.length < 2) {
         game.player.bullets.push(new Bullet(game.player.bulletImage))
-        console.log(game.player.bullets)
       }
   }
