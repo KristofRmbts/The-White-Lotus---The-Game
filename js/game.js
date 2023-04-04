@@ -4,7 +4,7 @@ class Game {
   constructor() {
     this.player = new Player()
     this.opponents = []
-    this.level = 4
+    this.level = 1
   }
 
   preload() {
