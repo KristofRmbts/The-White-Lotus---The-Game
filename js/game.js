@@ -2,6 +2,7 @@ class Game {
   constructor() {
     this.player = new Player()
     this.opponents = []
+    this.level = 1
   }
 
   preload() {
@@ -13,11 +14,11 @@ class Game {
     this.player.gun = loadImage("../assets/images/player/gun.png")
     this.player.bulletImage = loadImage("../assets/images/player/bullet.png")
 
-    this.opponents.image1 = loadImage("../assets/images/opponents/Gay1Down.png")
-    this.opponents.image2 = loadImage("../assets/images/opponents/Gay2Down.png")
-    this.opponents.image3 = loadImage("../assets/images/opponents/Gay3Down.png")
-    this.opponents.image4 = loadImage("../assets/images/opponents/Gay4Down.png")
-    this.opponents.image5 = loadImage("../assets/images/opponents/Gay5Down.png")
+    this.image1 = loadImage("../assets/images/opponents/Gay1Down.png")
+    this.image2 = loadImage("../assets/images/opponents/Gay2Down.png")
+    this.image3 = loadImage("../assets/images/opponents/Gay3Down.png")
+    this.image4 = loadImage("../assets/images/opponents/Gay4Down.png")
+    this.image5 = loadImage("../assets/images/opponents/Gay5Down.png")
   }
 
   draw() {
@@ -30,26 +31,51 @@ class Game {
       bullet.draw()
     })
 
-    this.player.bullets = this.player.bullets.filter(bullet => {
-      if (bullet.collision(this.opponents[0]) || bullet.x > 1000) {
-          return false // false bc should not be in the array
-      } else {
-          return true // rest should be in the array
-      }
+    // this.player.bullets = this.player.bullets.filter(bullet => {
+    //   this.opponents.forEach((opponent, index) => {
+    //     console.log(bullet.collision(opponent))
+    //     if (bullet.collision(opponent)) { 
+    //       this.opponents.splice(index, 1)
+    //       return false // false bc should not be in the array
+    //     } if (bullet.x > 1000) {
+    //     return false
+    //     }
+    //     })
+    //   return true
+    // })
+
+    this.player.bullets.forEach((bullet, bulletIndex) => {
+      this.opponents.forEach((opponent, opponentIndex) => {
+        if (bullet.collision(opponent)) { 
+          this.opponents.splice(opponentIndex, 1)
+          this.player.bullets.splice(bulletIndex, 1)
+        } 
+        if (bullet.x > 1000) {
+          this.player.bullets.splice(bulletIndex, 1)
+        }
+        })
     })
+
+    // Next level
+
+    // if (frameCount % 2 === 0) {
+    //   if (this.opponents.length === 0) {
+    //     this.level++
+    //   }
+    // }
 
     // Opponents
 
-    if (document.querySelector(`span`).innerText === "1" && this.opponents.length === 0) {
-      this.opponents.push(new Opponents(this.opponents.image1))
-    } else if (document.querySelector(`span`).innerText === "2" && this.opponents.length === 0) {
-      this.opponents.push(new Opponents(this.opponents.image1), new Opponents(this.opponents.image2))
-    } else if (document.querySelector(`span`).innerText === "3" && this.opponents.length === 0) {
-      this.opponents.push(new Opponents(this.opponents.image1), new Opponents(this.opponents.image2), new Opponents(this.opponents.image3))
-    } else if (document.querySelector(`span`).innerText === "4" && this.opponents.length === 0) {
-      this.opponents.push(new Opponents(this.opponents.image1), new Opponents(this.opponents.image2), new Opponents(this.opponents.image3), new Opponents(this.opponents.image4))
-    } else if (document.querySelector(`span`).innerText === "5" && this.opponents.length === 0) {
-      this.opponents.push(new Opponents(this.opponents.image1), new Opponents(this.opponents.image2), new Opponents(this.opponents.image3), new Opponents(this.opponents.image4), new Opponents(this.opponents.image5))
+    if (this.level === 1 && this.opponents.length === 0) {
+      this.opponents.push(new Opponents(this.image1))
+    } else if (this.level === 2 && this.opponents.length === 0) {
+      this.opponents.push(new Opponents(this.image1), new Opponents(this.image2))
+    } else if (this.level === 3 &&  this.opponents.length === 0) {
+      this.opponents.push(new Opponents(this.image1), new Opponents(this.image2), new Opponents(this.image3))
+    } else if (this.level === 4 &&  this.opponents.length === 0) {
+      this.opponents.push(new Opponents(this.image1), new Opponents(this.image2), new Opponents(this.image3), new Opponents(this.image4))
+    } else if (this.level === 5 &&  this.opponents.length === 0) {
+      this.opponents.push(new Opponents(this.image1), new Opponents(this.image2), new Opponents(this.image3), new Opponents(this.image4), new Opponents(this.image5))
     }
 
     this.opponents.forEach(opponent => {

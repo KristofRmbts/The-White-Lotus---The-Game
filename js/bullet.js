@@ -19,12 +19,12 @@ class Bullet {
         let bulletX = this.x + this.width/2
         let bulletY = this.y + this.height/2
 
-        // Get the middle of the player
+        // Get the middle of the opponent
         let opponentX = opponentInfo.x + opponentInfo.width/2
         let opponentY = opponentInfo.y + opponentInfo.height/2
 
         // dist(x1, y1, x2, y2) returns the distance between the objects
-        if (dist(opponentX, opponentY, bulletX, bulletY) > 25) {
+        if (dist(opponentX, opponentY, bulletX, bulletY) > 50) {
             return false
         } else {
             return true 
