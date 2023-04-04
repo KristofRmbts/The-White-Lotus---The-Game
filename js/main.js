@@ -1,9 +1,12 @@
 let myFont
+let mySound
 
 const game = new Game()
 
 function preload() {
     myFont = loadFont("../assets/monogram.ttf")
+    soundFormats('mp3', 'ogg');
+    mySound = loadSound('../assets/audio/pistol.wav');
     game.preload()
 }
 
@@ -54,6 +57,7 @@ function keyPressed() {
     }
 
     if (keyCode === 32 && game.player.bullets.length < 1) {
-        game.player.bullets.push(new Bullet(game.player.bulletImage))
+        game.player.bullets.push(new Bullet(game.player.bulletImage));
+        mySound.play()
       }
   }

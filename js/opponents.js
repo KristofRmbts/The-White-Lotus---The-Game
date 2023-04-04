@@ -6,7 +6,6 @@ class Opponents {
       this.width = 48
       this.height = 48
       this.velocity = 10
-      this.level = 0 
     }
   
     draw() {

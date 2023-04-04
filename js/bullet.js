@@ -5,7 +5,7 @@ class Bullet {
       this.y = game.player.y + 24
       this.width = 30
       this.height = 10
-      this.velocity = 10
+      this.velocity = 20
       this.level = 0
     }
   

@@ -4,7 +4,7 @@ class Game {
   constructor() {
     this.player = new Player()
     this.opponents = []
-    this.level = 1
+    this.level = 4
   }
 
   preload() {
@@ -61,11 +61,14 @@ class Game {
     if (this.level === 1 && this.opponents.length === 0) {
       this.opponents.push(new Opponents(this.image1))
     } else if (this.level === 2 && this.opponents.length === 0) {
-      this.opponents.push(new Opponents(this.image1), new Opponents(this.image2))
+      this.opponents.push(new Opponents(this.image1), new Opponents(this.image2));
+      document.querySelector("#bg").innerHTML = `<img src="../assets/images/backgrounds/level2background.png" class="stretch" alt="" />` 
     } else if (this.level === 3 &&  this.opponents.length === 0) {
-      this.opponents.push(new Opponents(this.image1), new Opponents(this.image2), new Opponents(this.image3))
+      this.opponents.push(new Opponents(this.image1), new Opponents(this.image2), new Opponents(this.image3));
+      document.querySelector("#bg").innerHTML = `<img src="../assets/images/backgrounds/level3background.jpeg" class="stretch" alt="" />` 
     } else if (this.level === 4 &&  this.opponents.length === 0) {
-      this.opponents.push(new Opponents(this.image1), new Opponents(this.image2), new Opponents(this.image3), new Opponents(this.image4))
+      this.opponents.push(new Opponents(this.image1), new Opponents(this.image2), new Opponents(this.image3), new Opponents(this.image4));
+      document.querySelector("#bg").innerHTML = `<img src="../assets/images/backgrounds/level4background.jpg" class="stretch" alt="" />` 
     } else if (this.level === 5 &&  this.opponents.length === 0) {
       this.opponents.push(new Opponents(this.image1), new Opponents(this.image2), new Opponents(this.image3), new Opponents(this.image4), new Opponents(this.image5))
     }
