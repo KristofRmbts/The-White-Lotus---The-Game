@@ -1,3 +1,5 @@
+let bg
+
 class Game {
   constructor() {
     this.player = new Player()
@@ -6,7 +8,9 @@ class Game {
   }
 
   preload() {
-    this.player.image = loadImage("../assets/images/player/TanyaDown.png")
+    bg = loadImage('../assets/images/backgrounds/ship.png');
+
+    this.player.image = loadImage("../assets/images/player/TanyaRight.png")
     this.player.imagedown = loadImage("../assets/images/player/TanyaDown.png")
     this.player.imageup = loadImage("../assets/images/player/TanyaUp.png")
     this.player.imageleft = loadImage("../assets/images/player/TanyaLeft.png") 
@@ -23,6 +27,7 @@ class Game {
 
   draw() {
     clear()
+    background(bg);
     this.player.draw()
 
     // Bullets
@@ -31,26 +36,13 @@ class Game {
       bullet.draw()
     })
 
-    // this.player.bullets = this.player.bullets.filter(bullet => {
-    //   this.opponents.forEach((opponent, index) => {
-    //     console.log(bullet.collision(opponent))
-    //     if (bullet.collision(opponent)) { 
-    //       this.opponents.splice(index, 1)
-    //       return false // false bc should not be in the array
-    //     } if (bullet.x > 1000) {
-    //     return false
-    //     }
-    //     })
-    //   return true
-    // })
-
     this.player.bullets.forEach((bullet, bulletIndex) => {
       this.opponents.forEach((opponent, opponentIndex) => {
         if (bullet.collision(opponent)) { 
           this.opponents.splice(opponentIndex, 1)
           this.player.bullets.splice(bulletIndex, 1)
         } 
-        if (bullet.x > 1000) {
+        if (bullet.x > 610) {
           this.player.bullets.splice(bulletIndex, 1)
         }
         })

@@ -2,8 +2,8 @@ class Player {
     constructor() {
         this.width = 48
         this.height = 48
-        this.x = 100
-        this.y = 300
+        this.x = 230
+        this.y = 260
         this.image
         this.gun
         this.bullets = []
