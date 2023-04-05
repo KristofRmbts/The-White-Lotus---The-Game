@@ -16,11 +16,9 @@ function setup() {
 
 function draw() {
     game.draw()
-    // Pop-Up screen
-    
 
-    // Game controls
-    fill("white")
+/*     // Game controls
+    fill("beige")
     rect(840, 520, 150, 70)
     textFont(myFont)
     textStyle(BOLD)
@@ -29,7 +27,7 @@ function draw() {
     text("CONTROLS:", 846, 538)
     textSize(16)
     text("^, v, >, <       MOVE", 846, 558)
-    text("space            SHOOT", 846, 578)
+    text("space            SHOOT", 846, 578) */
 }
 
 function keyPressed() {

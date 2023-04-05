@@ -54,3 +54,37 @@ canvas {
     background-color: beige;
     border: 1px solid black;
   }
+
+  /* ----------------------------------------------------------------------------------------- */
+
+  /* Pop-up message between levels */
+
+  .popUp {
+    position: absolute;
+    top: 45vh;
+    right: 36vw;
+    width: 400px;
+    height: 200px;
+    background-image: url(../assets/images/backgrounds/frame.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 400px 200px;
+    text-align: center;
+    display: block;
+    color: white;
+  }
+
+  .level {
+    padding-top: 35px;
+    padding-bottom: 20px;
+  }
+
+  .popUpText {
+    font-family: Monogram;
+    font-size: 25px
+  }
+
+  .popUpStart {
+    font-family: Monogram;
+    font-size: 25px;
+  }
