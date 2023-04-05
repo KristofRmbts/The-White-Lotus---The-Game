@@ -17,6 +17,7 @@ function setup() {
 function draw() {
     game.draw()
     // Pop-Up screen
+    
 
     // Game controls
     fill("white")

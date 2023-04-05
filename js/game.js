@@ -50,11 +50,11 @@ class Game {
 
     // Next level
 
-    // if (frameCount % 2 === 0) {
-    //   if (this.opponents.length === 0) {
-    //     this.level++
-    //   }
-    // }
+    if (frameCount % 2 === 0) {
+      if (this.opponents.length === 0) {
+        this.level++
+      }
+    }
 
     // Opponents
 
