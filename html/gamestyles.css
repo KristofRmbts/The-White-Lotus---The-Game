@@ -72,6 +72,9 @@ canvas {
     text-align: center;
     display: block;
     color: white;
+
+    animation-name: textBox-fadeIn;
+    animation-duration: 2s;
   }
 
   .level {
@@ -87,4 +90,65 @@ canvas {
   .popUpStart {
     font-family: Monogram;
     font-size: 25px;
+  }
+
+  /* ----------------------------------------------------------------------------------------- */
+
+  /* Animations */
+
+  @keyframes textBox-fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+
+  /* ----------------------------------------------------------------------------------------- */
+
+  /* Final level */
+
+  #tanyaJump {
+    position: absolute;
+    top: 42vh;
+    right: 33vw;
+    width: 500px;
+    height: 250px;
+    background-image: url(../assets/images/backgrounds/frame.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 500px 250px;
+    display: block;
+    color: white;
+    text-align: center;
+    animation-name: textBox-fadeIn;
+    animation-duration: 2s;
+  }
+
+  #tanyaJump > h2 {
+    margin-top: 47px;
+    font-size: 25px;
+  }
+
+  #tanyaJump > span {
+    margin-top: 50px;
+    font-size: 15px;
+    font-family: Monogram;
+    font-size: 22px;
+  }
+
+  .jumpButton {
+    margin-top: 15px;
+    padding: 7px;
+    background-color: #4b3623;
+    border: 1px solid #4b3623;
+    color: white;
+    font-family: Monogram;
+    font-size: 25px;
+  }
+
+  .jumpButton:hover {
+    background-color: beige;
+    color: black;
+  }
+
+  video {
+    pointer-events: none;
   }

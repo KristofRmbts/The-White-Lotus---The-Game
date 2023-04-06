@@ -57,7 +57,6 @@ class Game {
       if (keyCode === 83) {
         this.opponents.push(new Opponents(this.image1), new Opponents(this.image2));
         document.querySelector(".popUp").style.display = "none";
-        document.querySelector("#bg").innerHTML = `<img src="../assets/images/backgrounds/level2background.png" class="stretch" alt="" />`;
         this.level++ 
       }
     }
@@ -67,7 +66,6 @@ class Game {
       if (keyCode === 83) {
       this.opponents.push(new Opponents(this.image1), new Opponents(this.image2), new Opponents(this.image3));
       document.querySelector(".popUp").style.display = "none";
-      document.querySelector("#bg").innerHTML = `<img src="../assets/images/backgrounds/level3background.jpeg" class="stretch" alt="" />`;
       this.level++
       console.log(this.level)
       }
@@ -78,7 +76,6 @@ class Game {
       if (keyCode === 83) {
       this.opponents.push(new Opponents(this.image1), new Opponents(this.image2), new Opponents(this.image3), new Opponents(this.image4));
       document.querySelector(".popUp").style.display = "none";
-      document.querySelector("#bg").innerHTML = `<img src="../assets/images/backgrounds/level4background.jpg" class="stretch" alt="" />`;
       this.level++
       }
     }
@@ -93,7 +90,7 @@ class Game {
     }
 
     if (this.level === 7 && this.opponents.length === 0) {
-      window.location.replace("../html/gameover.html");
+      window.location.replace("../html/final level.html");
     }
 
   // Bullets
@@ -115,6 +112,8 @@ class Game {
   })
 }
 }
+
+// Pop-up Message DOM manipulation
 
 function popUpMessage() {
   let div = document.createElement('div')
