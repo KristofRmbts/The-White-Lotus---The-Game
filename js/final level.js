@@ -8,7 +8,7 @@ function preload() {
 
 function setup() {
   noCanvas()
-  video = createVideo(['../assets/video/JC Jump.MOV']);
+  video = createVideo(['../assets/video/JC Jump.mov']);
   video.size(1000, 600);
 }
 
