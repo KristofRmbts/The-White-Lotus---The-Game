@@ -18,6 +18,11 @@
     height:100%;
 }
 
+#hiddenPlay > a{
+    font-size: 2px;
+    text-decoration: none;
+}
+
 #title {
     position: sticky; 
     text-align: center;
